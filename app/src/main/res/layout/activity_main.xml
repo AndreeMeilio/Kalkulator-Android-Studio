@@ -24,13 +24,15 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:text=""
+        android:textColor="@color/white"
+        android:background="@color/grey"
         android:gravity="right"
         android:textSize="30sp"/>
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="70dp">
+        android:layout_marginBottom="50dp">
 
         <TableRow
             android:layout_width="match_parent">
@@ -51,7 +53,7 @@
 
             <Button
                 style="@style/setting_button.operator"
-                android:id="@+id/operator_plus"
+                android:id="@+id/operator_addition"
                 android:text="+"/>
         </TableRow>
 
@@ -73,7 +75,7 @@
 
             <Button
                 style="@style/setting_button.operator"
-                android:id="@+id/operator_minus"
+                android:id="@+id/operator_subtraction"
                 android:text="-"/>
         </TableRow>
 
@@ -103,15 +105,26 @@
         <TableRow>
             <Button
                 style="@style/setting_button"
+                android:id="@+id/clear_button"
+                android:text="cls"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/orange"/>
+
+            <Button
+                style="@style/setting_button"
                 android:id="@+id/angka0"
-                android:text="0"
-                android:layout_column="1"/>
+                android:text="0"/>
+
+            <Button
+                style="@style/setting_button"
+                android:id="@+id/koma_button"
+                android:text=","
+                android:backgroundTint="@color/orange"/>
 
             <Button
                 style="@style/setting_button.operator"
                 android:id="@+id/operator_divide"
-                android:text="÷"
-                android:layout_column="3"/>
+                android:text="÷"/>
         </TableRow>
     </TableLayout>
 
@@ -131,14 +144,6 @@
              android:paddingVertical="10dp"
              android:backgroundTint="@color/dark_orange"/>
 
-         <Button
-             android:id="@+id/clear_button"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:text="CLEAR"
-             android:textSize="20sp"
-             android:paddingVertical="10dp"
-             android:backgroundTint="@color/dark_orange"/>
      </LinearLayout>
 
 </LinearLayout>
