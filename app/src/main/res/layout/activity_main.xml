@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="50dp"
+        android:gravity="center"
+        android:text="@string/judul"
+        android:textStyle="bold"
+        android:textSize="40sp"/>
+
+    <TextView
+        android:id="@+id/text_hasil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text=""
+        android:gravity="right"
+        android:textSize="30sp"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp">
+
+        <TableRow
+            android:layout_width="match_parent">
+            <Button
+                style="@style/setting_button"
+                android:id="@+id/angka1"
+                android:text="1"/>
+
+            <Button
+                style="@style/setting_button"
+                android:id="@+id/angka2"
+                android:text="2"/>
+
+            <Button
+                style="@style/setting_button"
+                android:id="@+id/angka3"
+                android:text="3"/>
+
+            <Button
+                style="@style/setting_button.operator"
+                android:id="@+id/operator_plus"
+                android:text="+"/>
+        </TableRow>
+
+        <TableRow>
+            <Button
+                style="@style/setting_button"
+                android:id="@+id/angka4"
+                android:text="4"/>
+
+            <Button
+                style="@style/setting_button"
+                android:id="@+id/angka5"
+                android:text="5"/>
+
+            <Button
+                style="@style/setting_button"
+                android:id="@+id/angka6"
+                android:text="6"/>
+
+            <Button
+                style="@style/setting_button.operator"
+                android:id="@+id/operator_minus"
+                android:text="-"/>
+        </TableRow>
+
+        <TableRow>
+            <Button
+                style="@style/setting_button"
+                android:id="@+id/angka7"
+                android:text="7"/>
+
+            <Button
+                style="@style/setting_button"
+                android:id="@+id/angka8"
+                android:text="8"/>
+
+            <Button
+                style="@style/setting_button"
+                android:id="@+id/angka9"
+                android:text="9"/>
+
+            <Button
+                style="@style/setting_button.operator"
+                android:id="@+id/operator_multiply"
+                android:textAllCaps="false"
+                android:text="x"/>
+        </TableRow>
+
+        <TableRow>
+            <Button
+                style="@style/setting_button"
+                android:id="@+id/angka0"
+                android:text="0"
+                android:layout_column="1"/>
+
+            <Button
+                style="@style/setting_button.operator"
+                android:id="@+id/operator_divide"
+                android:text="÷"
+                android:layout_column="3"/>
+        </TableRow>
+    </TableLayout>
+
+     <LinearLayout
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+         android:layout_gravity="center">
+
+         <Button
+             android:id="@+id/hasil_button"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginRight="5dp"
+             android:text="COUNT"
+             android:textSize="20sp"
+             android:paddingVertical="10dp"
+             android:backgroundTint="@color/dark_orange"/>
+
+         <Button
+             android:id="@+id/clear_button"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="CLEAR"
+             android:textSize="20sp"
+             android:paddingVertical="10dp"
+             android:backgroundTint="@color/dark_orange"/>
+     </LinearLayout>
+
+</LinearLayout>
