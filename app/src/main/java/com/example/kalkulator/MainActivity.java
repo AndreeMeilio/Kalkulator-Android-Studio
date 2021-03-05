@@ -2,9 +2,11 @@ package com.example.kalkulator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -22,6 +24,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        angkaPertama = null;
+        angkaKedua = null;
 
         button_number1 = (Button) findViewById(R.id.angka1);
         button_number1.setOnClickListener(this);
@@ -78,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -116,21 +122,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 angkaPertama = Double.parseDouble(text_hasil.getText().toString());
                 isAdditionClicked = true;
                 text_hasil.setText(null);
+                text_hasil.setHint("Angka Kedua");
                 break;
             case R.id.operator_subtraction:
                 angkaPertama = Double.parseDouble(text_hasil.getText().toString());
                 isSubtractionClicked = true;
                 text_hasil.setText(null);
+                text_hasil.setHint("Angka Kedua");
                 break;
             case R.id.operator_multiply:
                 angkaPertama = Double.parseDouble(text_hasil.getText().toString());
                 isMultiplyClicked = true;
                 text_hasil.setText(null);
+                text_hasil.setHint("Angka Kedua");
                 break;
             case R.id.operator_divide:
                 angkaPertama = Double.parseDouble(text_hasil.getText().toString());
                 isDivideClicked = true;
                 text_hasil.setText(null);
+                text_hasil.setHint("Angka Kedua");
                 break;
 
             case R.id.koma_button:
@@ -140,29 +150,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.hasil_button:
                 angkaKedua = Double.parseDouble(text_hasil.getText().toString());
 
-                if (isAdditionClicked == true){
+                if (isAdditionClicked){
                     angkaHasil = angkaPertama + angkaKedua;
                     text_hasil.setText(String.valueOf(angkaHasil));
                     isAdditionClicked = false;
                 }
-                if (isSubtractionClicked == true){
+                if (isSubtractionClicked){
                     angkaHasil = angkaPertama - angkaKedua;
                     text_hasil.setText(String.valueOf(angkaHasil));
                     isSubtractionClicked = false;
                 }
-                if (isMultiplyClicked == true){
+                if (isMultiplyClicked){
                     angkaHasil = angkaPertama * angkaKedua;
                     text_hasil.setText(String.valueOf(angkaHasil));
                     isMultiplyClicked = false;
                 }
-                if (isDivideClicked == true){
+                if (isDivideClicked){
                     angkaHasil = angkaPertama / angkaKedua;
                     text_hasil.setText(String.valueOf(angkaHasil));
                     isDivideClicked = false;
                 }
+                angkaPertama = null;
                 break;
 
             case R.id.clear_button:
+
+                if (angkaPertama == null){
+                    text_hasil.setHint("Angka Pertama");
+                } else if (angkaPertama != null){
+                    text_hasil.setHint("Angka Kedua");
+                }
                 text_hasil.setText("");
                 break;
         }
