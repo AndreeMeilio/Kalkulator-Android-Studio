@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,6 +9,10 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,16 +22,18 @@
         android:textStyle="bold"
         android:textSize="40sp"/>
 
-    <TextView
-        android:id="@+id/text_hasil"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:text=""
-        android:textColor="@color/white"
-        android:background="@color/grey"
-        android:gravity="right"
-        android:textSize="30sp"/>
+        <TextView
+            android:id="@+id/text_hasil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:background="@color/grey"
+            android:gravity="right"
+            android:text=""
+            android:textColor="@color/white"
+            android:hint="Angka Pertama"
+            android:textColorHint="@color/for_hint"
+            android:textSize="30sp" />
 
     <TableLayout
         android:layout_width="match_parent"
@@ -54,7 +60,8 @@
             <Button
                 style="@style/setting_button.operator"
                 android:id="@+id/operator_addition"
-                android:text="+"/>
+                android:text="+"
+                android:backgroundTint="@color/orange"/>
         </TableRow>
 
         <TableRow>
@@ -76,7 +83,8 @@
             <Button
                 style="@style/setting_button.operator"
                 android:id="@+id/operator_subtraction"
-                android:text="-"/>
+                android:text="-"
+                android:backgroundTint="@color/orange"/>
         </TableRow>
 
         <TableRow>
@@ -99,7 +107,8 @@
                 style="@style/setting_button.operator"
                 android:id="@+id/operator_multiply"
                 android:textAllCaps="false"
-                android:text="x"/>
+                android:text="x"
+                android:backgroundTint="@color/orange"/>
         </TableRow>
 
         <TableRow>
@@ -124,7 +133,8 @@
             <Button
                 style="@style/setting_button.operator"
                 android:id="@+id/operator_divide"
-                android:text="÷"/>
+                android:text="÷"
+                android:backgroundTint="@color/orange"/>
         </TableRow>
     </TableLayout>
 
@@ -145,5 +155,5 @@
              android:backgroundTint="@color/dark_orange"/>
 
      </LinearLayout>
-
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>
