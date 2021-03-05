@@ -11,4 +11,6 @@
     <color name="grey">#404040</color>
     <color name="orange">#944C00</color>
     <color name="dark_orange">#331900</color>
+    <color name="yellow">#FFFF33</color>
+    <color name="for_hint">#C0C0C0</color>
 </resources>
